@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# reveil matin : power on + input = zubunew (dbs) + volume
 
 import os
 import time
@@ -11,14 +10,13 @@ import re
 def main():
 
   denonctl = denon.Denon('/dev/ttyS0',1)
-  denonctl.power_on()
-  time.sleep(2)
-  #denonctl.mv(40)
-  denonctl.mv(45)
-  denonctl.si_dbs()
-  time.sleep(2)
-  #denonctl.full_status()
-
+  denonctl.what_si()
+  denonctl.power_status()
+  if (denonctl.power == "OFF"):
+    denonctl.power_on()
+    denonctl.mv(45)
+  if (denonctl.si != "DBS"):
+    denonctl.si_dbs()
 
 if __name__ == '__main__':
   main()
