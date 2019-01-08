@@ -16,7 +16,7 @@ import io
 class Denon:
   "objet pour Denon"
   #def __init__(self):
-  def __init__(self, serialport='/dev/ttyS0', dontprint=0):
+  def __init__(self, serialport='/dev/ttyUSB_cableRS232', dontprint=0):
     self.vol = 0
     self.power = ""
     self.si = ""

@@ -10,7 +10,7 @@ import re
 
 def main():
 
-  denonctl = denon.Denon('/dev/ttyS0',1)
+  denonctl = denon.Denon('/dev/ttyUSB_cableRS232',1)
   denonctl.power_off()
 
 
