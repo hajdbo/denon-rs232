@@ -34,7 +34,7 @@ class Denon:
   
   def print_data(self, data):
     if self.dontprint == 0:
-      print data
+      print(data)
 
   def read_response_simple(self):
     #data = self.ser.readline(None,'\r').strip()
@@ -102,7 +102,7 @@ class Denon:
       self.what_si()
       self.mv_status()
       self.mute_status()
-      print json.dumps( dict(power=self.power, vol=self.vol, si=self.si, mute=self.muted) )
+      print(json.dumps( dict(power=self.power, vol=self.vol, si=self.si, mute=self.muted) ))
     self.dontprint = a
 
   def power_on(self):
